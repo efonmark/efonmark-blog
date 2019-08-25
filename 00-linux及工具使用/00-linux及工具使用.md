@@ -1,29 +1,39 @@
+
+
+
 # 00-linux及工具使用
 
 > **一番码客 : efonfighting.imwork.net**  
 > 挖掘你关心的亮点。  
 ----
 
-## Markdown
+# Markdown
+
+## Markdown编辑器教程
+
+*  <https://www.w3cschool.cn/lme/?>
+
+## 格式
+
+### 颜色字体
+
+* <font color=red size=3>红色 3号字体</font>
+
+### markdown指定代码块语言类型
+
+```python
+print('欢迎关注公众号“一番码客”')
+```
 
 ----
 
-* Markdown编辑器教程: <https://www.w3cschool.cn/lme/?>
+### 链接中有空格
+
+用“%20”代替空格
 
 ----
 
-* markdown指定代码块语言类型
-
-\```python  
-    print('欢迎关注公众号“一番码客”')  
-\```  
-
-----
-
-* 链接中有空格：用“%20”代替空格
-----
-
-## samba
+# samba
 
 卸载samba,smbclient,samba-common
 
@@ -41,3 +51,875 @@ sudo apt-get install smbfs
 ```
 
 ----
+
+
+Linux使用与服务器
+===========
+
+*****
+
+* 清除 ubuntu桌面访问windows/smb/samba共享文件夹并记住的用户密码
+
+seahorse
+
+*****
+
+* jack server 端口号问题
+
+
+同时修改$HOME/.jack-settings和$HOME/.jack-server/er/config.propertperties中的端口号（比如都改为8086/8087），方可支持多用户同时编译。
+
+*****
+
+
+* 更新字体
+
+
+以下三个目录都是字体目录
+
+/usr/share/fonts
+
+/usr/local/share/fonts            (我更加喜欢这种方式，因为这个文件下的fonts默认是看空的，第三方的字体会安装在另外两个文件里，管理起来有点麻烦，所以我更愿意放在这个文件夹里)
+
+/home/<username>/.fonts< ( <username>是你的用户名)
+
+更新缓存: sudo fc-cache -fv .fonts (.fonts为你的字体目)
+
+*****
+
+* 查看网卡信息
+
+
+sudo ethtool eth1
+
+nethogs: 按进程查看流量占用
+
+*****
+
+
+ssh [xgimi-dev@172.21.16.242](mailto:xgimi-dev@172.21.16.242)  xgimitvos;
+
+sudo adduser song.fu
+
+sudo smbpasswd -a song.fu
+
+sudo /etc/init.d/smbd restart
+
+ssh-keygen -t rsa
+
+*****
+
+* tftp server
+
+sudo service tftpd-hpa restart
+
+tftp 10.1.151.103 -gl file　　 FTP导入文件
+tftp 10.1.151.103 -pl file　　 FTP导出文件
+
+*****
+
+
+nc测试tcp通信：
+服务器：nc -v -l  192.169.2.222 12345
+客户端：nc -v  192.169.2.222 12345
+
+*****
+
+* screen
+
+screen -S david	//创建
+screen -r 12865   //恢复
+C-a d，退出会话：按下组合键Ctrl+a并松开，此时screen窗口等待命令，然后按下d并松开，退出screen窗口。d
+ctrl+a H   //log
+
+*****
+
+* 改用户名
+
+
+sudo usermod -l andy.li -d /home/andy.li -m kaiyou.li
+
+sudo passwd andy.li
+
+*****
+
+* 硬件配置查看
+总核数 = 物理CPU个数 X 每颗物理CPU的核数
+总逻辑CPU数 = 物理CPU个数 X 每颗物理CPU的核数 X 超线程数
+查看物理CPU个数
+cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l
+查看每个物理CPU中core的个数(即核数)
+cat /proc/cpuinfo| grep "cpu cores"| uniq
+查看逻辑CPU的个数
+cat /proc/cpuinfo| grep "processor"| wc -l
+查看CPU信息（型号）
+cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
+查看内 存信息
+cat /proc/meminfo
+*****
+
+* 开机自启动脚本
+
+/etc/rc.local
+~/.bashrc             //shell终端初始化脚本
+
+*****
+
+* 系统属性
+
+/etc/sysctl.conf
+
+*****
+
+
+
+Shell
+=====
+
+
+
+*****
+
+ 实现sudo自动输入密码的脚本如下：其中zjk123为密码
+  echo 'zjk123' | sudo -S cp file1 /etc/hosts
+
+*****
+
+远程执行shell命令：
+sshpass -p xgimi ssh [soy@192.168.31.70](mailto:soy@192.168.31.70) "rm -rf /home/soy/xgimi_driver_html/*"
+
+*****
+
+间接引用
+$'$i'
+
+*****
+
+文件命名：
+
+![1563873221060](/home/soy/00_efonfighting/github-efonmark-blog/efonmark-blog/00-linux及工具使用/assert/00-linux及工具使用/1563873221060.png)
+
+ls  | while read line;do a=`echo $line | sed -e 's/?//g'`;mv $line $a ;done;
+ls  | while read line;do a=`echo $line | sed -e 's/\*//g'`;mv $line $a ;done;
+ls  | while read line;do a=`echo $line | sed -e 's/\///g'`;mv $line $a ;done;
+ls  | while read line;do a=`echo $line | sed -e 's/|/_/g'`;mv $line $a ;done;
+ls  | while read line;do a=`echo $line | sed -e 's/</_/g'`;mv $line $a ;done;
+ls  | while read line;do a=`echo $line | sed -e 's/>/_/g'`;mv $line $a ;done;
+ls  | while read line;do a=`echo $line | sed -e 's/(/_/g'`;mv $line $a ;done;
+ls  | while read line;do a=`echo $line | sed -e 's/)/_/g'`;mv $line $a ;done;
+ls  | while read line;do a=`echo $line | sed -e 's/:/_/g'`;mv $line $a ;done;
+ls  | while read line;do a=`echo $line | sed -e 's/\ /_/g'`;mv $line $a ;done;
+ls  | while read line;do a=`echo $line | sed -e 's/（/_/g'`;mv $line $a ;done;
+ls  | while read line;do a=`echo $line | sed -e 's/）/_/g'`;mv $line $a ;done;
+ls  | while read line;do a=`echo $line | sed -e 's/\.\.\./\./g'`;mv $line $a ;done;
+ls  | while read line;do a=`echo $line | sed -e 's/…//g'`;mv $line $a ;done;
+ls  | while read line;do a=`echo $line | sed -e 's/ | //g'`;mv $line $a ;done;
+
+*****
+
+
+
+
+ awk -F ',' '{print NF-3}' XGIMI_POLO_EVT_Tuning_Movie_mode_19V_ver1.0.cfg >1.txt 
+
+
+* 判断某个文件夹是否存在并
+
+test -d $(GMPF_IMG) && cp -vuf $(XGIMI_ROOT)/target/product/$(PROJECT)/images/* $(GMPF_IMG)
+
+*****
+
+
+
+* 点击随机数位置
+
+while true;do input tap $(($RANDOM%100 +260)) $(($RANDOM%80 +760));done
+
+*****
+
+
+
+* export LC_ALL=C
+
+在shell脚本中，这一句的作用是为了去除所有本地化的设置，让命令能正确执行。
+
+*****
+
+
+
+* 修改sh默认连接到bash的一种方法
+
+sudo dpkg-reconfigure dash
+选择no 即可！
+
+*****
+
+
+
+* 命令行中执行命令行
+
+adb pull -a /sdcard/screencap.png cap`date +%m%d%H%M%S`.png
+
+*****
+
+
+
+* 注释多行
+
+:<<eof
+被注释的多行内容
+eof
+
+*****
+
+
+
+* 命令行实现多条shell
+
+多文件重命名：
+ls | while read line;do **i=$[$i + 1];a=`printf "%03d" $i`**;mv $line $a.mp4;done
+ls | while read line;do mv $line ${line%%"房地产广告精选1"*}房地产广告精选${line##*"房地产广告精选1"};done
+
+*****
+
+find -name "358*.git" | while read line; do  cd $line; git fetch; cd ..; done
+
+*****
+
+while read line
+do
+   …
+done < file
+
+*****
+
+command | while read line
+do
+…
+done
+
+*****
+
+
+
+* set命令
+
+-a：标示已修改的变量，以供输出至环境变量。
+-b：使被中止的后台程序立刻回报执行状态。
+-C：转向所产生的文件无法覆盖已存在的文件。
+-d：Shell预设会用杂凑表记忆使用过的指令，以加速指令的执行。使用-d参数可取消。
+-e：若指令传回值不等于0，则立即退出shell。
+-f：取消使用通配符。
+-h：自动记录函数的所在位置。
+-H Shell：可利用"!"加<指令编号>的方式来执行history中记录的指令。
+-k：指令所给的参数都会被视为此指令的环境变量。
+-l：记录for循环的变量名称。
+-m：使用监视模式。
+-n：只读取指令，而不实际执行。
+-p：启动优先顺序模式。
+-P：启动-P参数后，执行指令时，会以实际的文件或目录来取代符号连接。
+-t：执行完随后的指令，即退出shell。
+-u：当执行时使用到未定义过的变量，则显示错误信息。
+-v：显示shell所读取的输入值。
+-x：执行指令后，会先显示该指令及所下的参数。
+
+删除以a开头的行 : sed -i '/^a.*/d' tmp.txt
+ls  | while read line;do a=`echo $line | sed -e 's/?//g'`;mv $line $a ;done;
+sed -i 's/20.* : http/http/g' 一汽奔腾.txt
+
+*****
+
+
+
+* 显示文件夹下所有文件的绝对路径
+
+find "$(pwd)" -maxdepth 1 | sed '1'd  # 删除第一行
+
+*****
+
+
+
+* awk
+
+$0就表示一个记录，$1表示记录中的第一个字段。
+awk '{print $1}'   //第1列
+awk '{print $(NF-1)}'  //倒数第2列
+
+NR表示从awk开始执行后，按照记录分隔符读取的数据次数，默认的记录分隔符为换行符，因此默认的就是读取的数据行数，NR可以理解为Number of Record的缩写。
+FNR，每当处理一个新文件的时候，FNR就从1开始计数，FNR可以理解为File Number of Record。在awk处理多个输入文件的时候，在处理完第一个文件后，NR并不会从1开始，而是继续累加，因此就出现了FNR。
+NF表示目前的记录被分割的字段的数目，NF可以理解为Number of Field。
+
+awk -F ',' 'gsub($1,NF)' 48k_script_example.cfg   //将文本以“,”分割，将第1域替换成“每行列数”
+
+cat GMUI3.0.0.LIST | wc -l //查看输出行数
+sed -n '1p' 1000098.txt |awk '{print NF}'    //查看某行有多少列
+
+*****
+
+
+
+* $变量值
+
+$?  //返回值 
+
+*****
+
+
+
+* sed
+
+sed -n '2p' //第2行
+sed -i '/^$/d' tmp.txt 删除空行
+sed -i '/\r/d' tmp.txt 删除^M
+cat ssss.txt | grep "@*.com" | sed 's/.com.*$/.com/g' | sort | uniq   #（uniq 去除重复，必须先进行正则表达 后'.*$'  前 '^.*'）
+
+
+
+*****
+
+
+
+* secure.sh
+
+#!/bin/bash
+if [ "" = "$1" ] || [ "" = "$2" ];then
+echo security.sh -e/-d filename
+elif [ "-e" = $1 ];then
+tar -zcf - $2 | openssl des3 -salt -k \!1qazxsW2 | dd of=$2.des3
+elif [ "-d" = $1 ];then
+dd if=$2 | openssl des3 -d -k \!1qazxsW2 | tar zxf -
+fi
+
+*****
+
+
+
+
+Makefile
+========
+
+*****
+
+
+$(findstring FIND,IN)
+函数名称：查找字符串函数—findstring。
+函数功能：搜索字串“IN”，查找“FIND”字串。
+返回值：如果在“IN”之中存在“FIND” ，则返回“FIND”，否则返回空。
+函数说明：字串“IN”之中可以包含空格、[Tab]。搜索需要是严格的文本匹配。
+示例：
+$(findstring a,a b c)
+$(findstring a,b c)
+第一个函数结果是字“a”；第二个值为空字符。
+
+*****
+
+
+
+adb
+===
+
+*****
+
+
+
+* shell:
+
+input keyevent KEYCODE_POWER //亮屏
+input text 123456    //输入文本123456               
+input keyevent 7    //使用keycode num输入，keycode表可百度查询
+input keyevent KEYCODE_1  //使用keycode name输入1
+input keyevent KEYCODE_HOME  //使用keycode name按空格键
+input tap 367 1277 //点击坐标367  1277
+input keyevent 26;input swipe 1024 945 134 968 200   //解锁，从（1024，945）滑动到（134，968）200毫秒内
+am start com.tencent.mm/com.tencent.mm.ui.LauncherUI   //启动微信
+adb wait-for-device
+
+*****
+
+
+
+* wifi adb :需要在同一局域网
+
+adb tcpip 5555
+adb connect 192.168.36.87
+
+*****
+
+
+
+
+Gerrit
+======
+
+*****
+
+
+
+* 搜索
+
+gerrit serch：before:2018-09-07 after:2018-09-04 projects:MSD848 status:merged
+
+*****
+
+
+
+Git
+===
+
+
+
+*****
+
+
+
+* cherry-pick 多个commit
+
+ git cherry-pick commitid1..commitid100 (不包含第一个commitid)
+
+*****
+
+
+
+* 查找丢失的commit ：
+
+git fsck --lost-found
+
+*****
+
+
+
+* git status 中文乱码：
+
+git config --global core.quotepath false
+
+*****
+
+
+git format-patch
+1)两个节点之间的提交： [git format-patch  节点A   节点B]
+2)单个节点： [git format-patch -1 节点A] （-n就表示要生成几个节点的提交）
+3)最近一次提交节点的patch ：[git format-patch HEAD^] 依次类推……
+git am *.patch  //生成提交节点
+git apply *.patch  //只修改文件，不生成提交节点
+
+//刚刚push到远端还没有人其他人下载或改动的：
+git commit --amend
+git push --force-with-lease
+
+//其他人已经下载或改动：
+git fetch origin
+git reset --hard origin/master
+
+git push origin local_branch //推送本地新建分支到远程分支
+git push --delete origin local_branch  //删除远程分支
+git branch -m oldname newname  //本地分支重命名
+
+git diff branch1 branch2 --stat             //显示出所有有差异的文件列表
+git diff branch1 branch2 文件名(带路径)    //显示指定文件的详细差异
+git diff branch1 branch2                  //显示出所有有差异的文件的详细差异
+
+*****
+
+
+git config --global pack.packSizeLimit 512m
+
+git branch -m oldbranchname newbranchname      //重命名本地分支
+
+*****
+
+
+git config --global push.default simple/match       //推送当前分支/所有与远程同名分支
+
+*****
+
+
+git status -uno   [man git-status]
+
+*****
+
+
+git branch -r -D origin/BranchName     //删除本地的远程分支
+git push origin -d BranchName    //远程删除git服务器上的分支
+
+*****
+
+
+删除tag：
+显示本地 tag
+git tag
+Remote_Systems_Operation
+删除本地tag
+git tag -d Remote_Systems_Operation
+用push, 删除远程tag
+// git push origin :refs/tags/Remote_Systems_Operation
+git push --tags
+
+*****
+
+
+gitignore 修改不起作用
+git rm -r --cached .  
+git add .
+git commit -m "update gitignore"
+
+*****
+
+
+
+
+SVN
+===
+
+*****
+
+
+svn update
+
+*****
+
+
+
+Repo
+====
+
+
+
+*****
+
+
+错误解决：
+Write failed: Broken pipe7114/12857), 69.54 MiB | 257.00 KiB/s   
+fatal: The remote end hung up unexpectedly
+fatal: early EOF
+fatal: unpack-objects failed
+
+mux_client_request_session: read from master failed: Broken pipe
+
+问题现象
+用 ssh 命令连接服务器之后，如果一段时间不操作，再次进入 Terminal 时会有一段时间没有响应，然后就出现错误提示：
+Write failed: Broken pipe
+只能重新用 ssh 命令进行连接。
+
+解决方法
+
+方法一：如果您有多台服务器，不想在每台服务器上设置，只需在客户端的 ~/.ssh/ 文件夹中添加 config 文件，并添加下面的配置：
+ServerAliveInterval 60
+
+方法二：如果您有多个人管理服务器，不想在每个客户端进行设置，只需在服务器的 /etc/ssh/sshd_config 中添加如下的配置：
+ClientAliveInterval 60
+
+方法三：如果您只想让当前的 ssh 保持连接，可以使用以下的命令：
+$ ssh -o ServerAliveInterval=60 user@sshserver
+
+*****
+
+
+
+VIM
+===
+
+
+
+*****
+
+
+%s/vivian/sky/g : 替换每一行中所有 vivian 为 sky
+ 方式2 查找符号设定:
+
+查找大小写区分
+/\CWord 区分大小写的查找
+/\cword 不区分大小写的查找
+
+*****
+
+
+
+* 把一个很长的一行按空格分为多行
+
+:%s/ +/\r/g
+简单解释一下：
+%s ：在整个文件范围查找替换
+/ ：分隔符
++ ：匹配空格，其中“ ”表示空格，+表示重复1次或多次，加在一起表示一个或多个空格。
+/r ：换行符
+/g ：全局替换
+
+*****
+
+
+
+* 设置鼠标模式
+
+'mouse' 选项的字符决定 Vim 在什么场合下会使用鼠标:
+n       普通模式
+v       可视模式
+i       插入模式
+c       命令行模式
+h       在帮助文件里，以上所有的模式
+a       以上所有的模式
+r       跳过 |hit-enter| 提示
+A       在可视模式下自动选择
+关闭鼠标
+:set mouse-=a
+打开鼠标
+:set mouse=a
+
+*****
+
+
+Ubuntu
+======
+
+
+
+*****
+
+
+
+* 终端打开图形文件夹
+
+nautilus .
+
+*****
+
+
+
+* 定制桌面文件夹
+
+[/home/你的用户文件夹/.config/user-dirs.dirs](file:///home/%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6%E5%A4%B9/.config/user-dirs.dirs)
+
+*****
+
+
+
+* 必要软件安装
+
+Albert
+
+*****
+
+
+
+* wine sourceinsight 乱码
+
+1、Document Options -> Screen Fonts -> 字体设置为新宋体(等宽)或者其他支持中文的字体，字符集选GB2312
+2、Preferences -> Syntax Formatting -> Use only color formatting前面的钩挑上。
+
+*****
+
+
+
+Matlab
+======
+
+
+
+*****
+
+
+
+* 读取txt矩阵数据画多条曲线
+
+clear;
+fid3=load('../div.txt', '%n', 'whitespace', '');
+[m,n]=size(fid3);
+Ox=1:m;
+figure;
+plot(Ox,fid3);
+
+%grid on; %打开网格
+%grid minor;               %打开小网格
+%set(gca,'ygrid','on');       %打开y栅格
+
+%{
+xlabel('step num');      %图表描述
+ylabel('clarity val');
+title(['LineCnt=' num2str(i)]);
+%}
+
+*****
+
+
+
+* 启动执行命令
+
+/home/03_tools/MATLAB/R2014a/toolbox/local/startup.m
+
+*****
+
+
+
+excel
+=====
+
+
+vbox
+====
+
+
+
+*****
+
+
+
+* vdi文件压缩
+
+
+VirtualBox guest os用久了vdi文件就会越来越大，就算在guest os中删除了一些文件，vdi也不会变小。
+
+如果guest os 是windows:
+1、先在guest os上运行磁盘碎片管理器，将各个磁盘的磁盘碎片减少；
+2、下载sdelete（<http://technet.microsoft.com/en-us/sysinternals/bb897443.aspx>）;
+3、运行sdelete -c -z C:  
+4、关闭guest os 和 VirtualBox
+5、在host os上运行VBoxManage modifyhd --compact yourImage.vdi
+
+如果guest os 是Linux:
+1、进入su
+2、$ dd if=/dev/zero of=test.file
+3、$ rm test.file
+4、关闭guest os 和 VirtualBox
+5、在host os上 运行 $ VBoxManage modifyhd --compact yourImage.vdi
+
+这样在guest上看到占用的空间就和host上看到的空间就一样了。
+
+*****
+
+
+
+* 网络设置
+
+设置桥接后需要将win虚拟机的防火墙关闭才能实现互ping。
+
+*****
+
+
+
+* 虚拟机连usb会内存溢出 :
+
+查看进程为：gvfsd-mtp
+执行命令：sudo pkill gvfsd-mtp
+
+*****
+
+
+
+Mysql
+=====
+
+
+
+*****
+
+
+
+* 删除数据库
+
+DROP DATABASE tutorial_database;
+
+*****
+
+
+
+Color
+=====
+
+
+
+*****
+
+
+护眼色：
+色调：85；饱和度：123；亮度：205，
+R: 199; G: 237; B:204;
+颜色代码： #C7EDCC
+
+*****
+
+
+
+
+Mencoder
+========
+
+
+
+
+
+*****
+
+
+mencoder 00008.mp4 -o output.mp4 -ovc copy -oac twolame
+
+编码使用的音频及视频编码器分别通过-oac及 -ovc选项指定例如输入如下命令 "mencoder -ovc help "
+-vf scale=宽:高。输出质量可由-sws选项调节
+
+1、-ofps 15 ：帧速率15fps
+2、scale=176:144 ：图像原始比例，如4:3/16:9
+3、expand=176:144：转换后的分辨率
+4、-srate 44100 ：声音采样率44100Hz
+5、-ovc xvid ：视频编码格式XVID
+6、-xvidencopts bitrate=500：视频编码率500Kbps
+7、max_bframes=0：禁用BFrame
+8、quant_type=h263：XVID编码的量化方式（建议改为mpeg）
+9、me_quality=0：VHQ模式参数，动态搜索精度（6为精度最大值）
+10、-lavcopts acodec=mp2：音频编码为MP2
+11、abitrate=96 ：音频编码率96Kbps
+
+*****
+
+
+
+nginx
+=====
+
+
+
+*****
+
+**部署静态网页**
+
+
+* 安装nginx：sudo apt install nginx
+* 配置：[/etc/nginx/nginx.conf](file:///etc/nginx/nginx.conf)
+
+http字段末尾添加
+	server {
+	                listen 8011; //监听端口
+	                server_name  _; //这里 "_" 代表获取匹配所有
+	                root  /home/efonfighting/efon_html/; //站点根目录
+	                index index.html;
+	        }
+	
+
+sudo nginx -s reload
+
+*****
+
+
+
+zim
+===
+
+官网：<http://www.zim-wiki.org/>
+
+为了自动化部署：
+command（zim --help）：<http://www.zim-wiki.org/manual/Help/Commandline_Options.html>
+将文件
+	zim --export  -r ~/Desktop/test/ -o ~/Desktop/test4 --index-page index --template ZeroFiveEight
+
+
+
+刷屏小工具
+=====
+cmatrix
+sl
+gnome-terminal  -- bash -c "sl"
+
+花生壳
+===
+
+花生壳 3.0 for Linux 相关安装使用文档：<http://service.oray.com/question/4287.html>
+phddns start（启动）| stop（停止）| status（状态）| restart（重启）|
+phddns reset（重置）
+phddns version（版本）
