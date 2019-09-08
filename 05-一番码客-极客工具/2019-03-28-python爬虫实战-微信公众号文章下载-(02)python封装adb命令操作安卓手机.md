@@ -1,11 +1,19 @@
-# python爬虫实战-爬取微信公众号所有历史文章 - (02) python封装adb命令操作安卓手机
+---
+title: python爬虫实战-微信公众号文章下载-(02)python封装adb命令操作安卓手机
+---
 
-> ## https://github.com/efonmark/efonmark-blog
-> 欢迎关注微信公众号“**一番码客**”获取**免费下载服务**与**源码**，并及时接收最新文章推送
+------
+
+**一番码客 : 挖掘你关心的亮点。  **
+**http://efonfighting.imwork.net**
+
+------
 
 让大家久等了，来不及解释（jiaobian）了，让我们上车吧。  
-<img src="./pictures/shangche.jpeg" width = 50% height = 30%\>  
+<img src="2019-03-28-python爬虫实战-微信公众号文章下载-(02)python封装adb命令操作安卓手机/shangche.jpeg" width = 50% height = 30%>  
 正如一番在这个系列文章的（00）篇中所说，一番在做1.0版本的时候用到了一些取巧的方法，其中就包括python通过adb操作手机。  
+
+<!-- more -->
 之前微信第一款小程序游戏“跳一跳”突然火起来的时候，办公室午休的时候掀起了一股跳一跳的热潮，这个时候也是一番接触python不久。在网上很快就有小伙伴用python做了一个外挂，并传在了github上开源开发。这其中的原理就用到了adb操作和图像处理，鉴于python的使用群体庞大，这个项目也得到了持续的优化和更新，操作对于新手非常友善，也非常值得新手用来学习，有趣又实用（有兴趣的同学，公众号后台回复“跳一跳”获取github源码地址）。
 
 ## ADB的使用方法及常见命令
@@ -17,8 +25,9 @@ adb的基本使用方法和常见的命令，接触过安卓调试的同学应�
 
 ## python adb操作封装
 首先来看下一番的1.0版本为了采集公众号历史文章的标题和链接，封装了哪些adb操作。
-<img src="./pictures/2019-03-28/01.png" width=100%\n>
+<img src="2019-03-28-python爬虫实战-微信公众号文章下载-(02)python封装adb命令操作安卓手机/01.png" width=100%>
 这里一番将adb 操作封装为一个AdbOpt类，__init__() 函数就是创建类的对象时自动执行的初始化函数，类似C++里的构造函数，通常我们在这个函数里做一些类变量的初始化动作。代码如下：
+
 ```
 def __init__(self,phonePara):
     '''
@@ -186,6 +195,16 @@ def FindFlgFromCap(self, flgPath, confidenceVTH, blockEn, findDelay):
 
 好了，python对adb的封装就讲到这里，期待你的留言和获取源码哦。我们下期见！
 
-> 欢迎关注微信公众号“**一番码客**”获取**免费下载服务**与**源码**，并及时接收最新文章推送。  
-> ## https://github.com/efonmark/efonmark-blog
 > **趋势不会因为个别的吝啬与懒惰而停止向前的车轮，所以迈开脚步，一起赶路。**  
+
+
+
+------
+
+**免费知识星球： [一番码客-积累交流]([wwww](https://t.zsxq.com/NRVBURr))**
+**微信公众号：一番码客**
+**微信：Efon-fighting**
+**网站： http://efonfighting.imwork.net**
+
+------
+
