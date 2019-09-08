@@ -2,12 +2,8 @@
 title: python爬虫实战-微信公众号文章下载-(03)python开源库做图文识别
 ---
 
-------
-
-**一番码客 : 挖掘你关心的亮点。  **
-**http://efonfighting.imwork.net**
-
-------
+> **一番码客 : 挖掘你关心的亮点。  **
+> **http://efonfighting.imwork.net**
 
 <img src="2019-04-13-python爬虫实战-微信公众号文章下载-(03)python开源库做图文识别/fighting1.jpg">
 
@@ -102,19 +98,12 @@ def test():
 3. 返回，向下滑动页面刚好一栏标题，重复1。
 4. 通关！
 
-> ** 人生的蜕变不知是否一定需要伴随着痛苦，但从很多经验来看，这条路是行得通的。
+> **人生的蜕变不知是否一定需要伴随着痛苦，但从很多经验来看，这条路是行得通的。
 你承受了人生的痛苦，也经历着世间的繁华。无所谓不可承受之重。**
 
 <img src="2019-04-13-python爬虫实战-微信公众号文章下载-(03)python开源库做图文识别/fighting.jpg" >
 
-
-
-------
-
-**免费知识星球： [一番码客-积累交流]([wwww](https://t.zsxq.com/NRVBURr))**
-**微信公众号：一番码客**
-**微信：Efon-fighting**
-**网站： http://efonfighting.imwork.net**
-
-------
-
+> **免费知识星球： [一番码客-积累交流]([wwww](https://t.zsxq.com/NRVBURr))**
+> **微信公众号：一番码客**
+> **微信：Efon-fighting**
+> **网站： http://efonfighting.imwork.net**

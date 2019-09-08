@@ -1,10 +1,13 @@
 ---
 title: 自我介绍MTV法则
+date: 2019-05-14
+tags: 
+categories: 一番码客-积累交流
 ---
 
-> **一番码客 : 挖掘你关心的亮点。  **
+> **一番码客 : 挖掘你关心的亮点**
 >
-> http://efonfighting.imwork.net
+> **http://efonfighting.imwork.net**
 
 ```txt
 一番：
@@ -37,13 +40,10 @@ title: 自我介绍MTV法则
 很多看似简单的字句，看别人写出来，似乎不怎么起眼，但自己真正动起手来时，需要自己的思考了。
 
 比如看别人的自我介绍，也许人家几年的经验，做了几个月的项目，只有一句话就介绍完了。那么自己的经验，需要自己总结思考了，这个时候发现是一盘散沙，才恍然大悟，自己以后的行事，需要更明确的目标和规划了。自己的有效社交价值输出点在哪里，自己的亮点成就是什么，标签是什么。
-<div align=center><img src="2019-05-14-自我介绍MTV法则/MTV1.jpg", width=70%>
+<div align=center><img src="自我介绍MTV法则/MTV1.jpg", width=70%>
 
 
-----
-> **免费知识星球： [一番码客-积累交流]([wwww](https://t.zsxq.com/NRVBURr))**
+> **免费知识星球： [一番码客-积累交流](https://t.zsxq.com/NRVBURr)**
 > **微信公众号：一番码客**
 > **微信：Efon-fighting**
 > **网站： http://efonfighting.imwork.net**
-
-----
