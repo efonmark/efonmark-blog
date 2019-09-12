@@ -16,7 +16,7 @@ categories: 互联网
 
 ## 3. 环境搭建
 
-一番是个linux控，因此一番的博客搭建也用的是ubuntu服务器。当然，因为Hexo是基于js的，天生具有跨平台的特点，Hexo的搭建也支持Mac和Windows，具体可以参考第6节引用里的《hexo中文文档》。
+一番是个linux控，因此一番的博客搭建也用的是ubuntu服务器。当然，因为Hexo是基于js的，天生具有跨平台的特点，Hexo的搭建也支持Mac和Windows，具体可以参考第7节引用里的《hexo中文文档》。
 
 Hexo安装依赖于Node.js和Git，因此如果没有安装这两个工具，需要提前安装一下：
 
