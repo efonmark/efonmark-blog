@@ -9,8 +9,10 @@ top: 1
 
 ## <font color=Green> 微信公众号 </font>
 <img src="README/guanzhu_1.jpg" width = 70% />    
+
 #### <font color=blue> 公众号批量下载为PDF </font>  
 回复关键字“**公众号下载**”获取**免费下载服务**与**源代码**。  
+
 #### <font color=blue> 百度文库下载 </font>  
 回复关键字“**百度文库下载**”获取**免费下载服务**。  
 
