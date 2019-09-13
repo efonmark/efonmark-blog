@@ -1,5 +1,8 @@
 ---
 title: python爬虫实战-微信公众号文章下载-(02)python封装adb命令操作安卓手机
+date: 2019-03-28
+tags: 
+categories: 极客工具
 ---
 
 > **一番码客 : 挖掘你关心的亮点。** 
