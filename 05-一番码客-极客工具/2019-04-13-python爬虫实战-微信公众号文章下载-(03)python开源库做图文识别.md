@@ -2,7 +2,7 @@
 title: python爬虫实战-微信公众号文章下载-(03)python开源库做图文识别
 ---
 
-> **一番码客 : 挖掘你关心的亮点。  **
+> **一番码客 : 挖掘你关心的亮点。**
 > **http://efonfighting.imwork.net**
 
 <img src="2019-04-13-python爬虫实战-微信公众号文章下载-(03)python开源库做图文识别/fighting1.jpg">

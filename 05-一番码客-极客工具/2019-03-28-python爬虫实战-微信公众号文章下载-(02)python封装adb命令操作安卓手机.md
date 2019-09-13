@@ -2,8 +2,8 @@
 title: python爬虫实战-微信公众号文章下载-(02)python封装adb命令操作安卓手机
 ---
 
-> **一番码客 : 挖掘你关心的亮点。  **
-> **http://efonfighting.imwork.net**
+> **一番码客 : 挖掘你关心的亮点。** 
+> **http://efonfighting.imwork.net** 
 
 让大家久等了，来不及解释（jiaobian）了，让我们上车吧。  
 <img src="2019-03-28-python爬虫实战-微信公众号文章下载-(02)python封装adb命令操作安卓手机/shangche.jpeg" width = 50% height = 30%>  
