@@ -126,6 +126,7 @@ theme: material-x #这里选择主题，即theme目录下的主题
 * hexo中文文档：https://hexo.io/zh-cn/docs/setup
 * material-x主题：https://xaoxuu.com/wiki/material-x/#特别示例
 * hexo引用本地图片无法显示：https://blog.csdn.net/xjm850552586/article/details/84101345
+* 解决Hexo博客文章置顶问题：https://zhwhong.cn/2017/03/23/deal-with-hexo-article-top-problem/
 
 ## 日更结语
 
