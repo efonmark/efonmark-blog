@@ -1,3 +1,7 @@
+/*
+ * 线程的优先级
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
@@ -22,6 +26,9 @@ int main(){
     pthread_t id;
 
     pthread_attr_t attr;
+	
+	struct sched_param param;
+	
     //初始化
     pthread_attr_init(&attr);
     //设置相关属性
