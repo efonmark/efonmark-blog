@@ -3,7 +3,6 @@ title: 如何通过ssh控制win10里面的ubuntu系统
 date: 2019-09-18
 tags: 
 categories: 极客工具
-
 ---
 
 > **一番码客 : 挖掘你关心的亮点。**
