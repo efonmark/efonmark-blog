@@ -1,5 +1,5 @@
 ---
-title: 2019-09-24-win10下electron开发环境搭建
+title: win10下electron开发环境搭建
 date: 2019-09-24
 tags: 
 categories: 极客工具
