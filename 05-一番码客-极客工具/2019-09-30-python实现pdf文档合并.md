@@ -1,5 +1,5 @@
 ---
-title: 
+title: python实现pdf文档合并
 date: 2019-09-30
 tags: 
 categories: 极客工具
@@ -12,11 +12,11 @@ categories: 极客工具
 
 [TOC]
 
+<!--more-->
+
 之前一番在免费知识星球给大家开发过一个在windows下使用的简单的pdf合并工具。其实用python去实现真的很简单，用了`tkinter + PyPDF2 + pyinstaller`。今天一番来解读下这个小工具怎么用python实现pdf文档合并的，而且合并完后还自带目录。
 
 ![](2019-09-30-python实现pdf文档合并/pdf01.png)
-
-<!--more-->
 
 ## 使用PyPDF2库
 
