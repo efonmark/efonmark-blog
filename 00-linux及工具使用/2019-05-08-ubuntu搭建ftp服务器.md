@@ -1,11 +1,19 @@
-# ubuntu搭建ftp服务器
+---
+title: ubuntu搭建ftp服务器
+date: 2019-05-08
+tags: 
+categories: linux及工具使用
+---
+
+[TOC]
 
 > **一番码客 : efonfighting.imwork.net**  
 > 专注数据挖掘与聚合，分享数据挖掘软件工具与开发技术。
 ----
 
-
 用linux搭建ftp服务器的情况很常见，也很常见，最近一番在搭建云服务器，就用到了这个，这里总结一下，分享给需要的同学，一步一步按部就班即可，轻松搞定。  
+
+<!--more-->
 
 ## 在线安装  
 
