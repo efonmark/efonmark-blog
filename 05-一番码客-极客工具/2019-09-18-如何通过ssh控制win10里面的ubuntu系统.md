@@ -173,7 +173,13 @@ win10的开始-运行里面输入shell:startup打开启动文件夹，把startse
 
 
 
-> **免费知识星球： [一番码客-积累交流]([wwww](https://t.zsxq.com/NRVBURr))**
-> **微信公众号：一番码客**
-> **微信：Efon-fighting**
-> **网站： http://efonfighting.imwork.net**
+<table>
+<tr>
+<td ><center><img src="http://efonfighting.imwork.net/efonmark-blog/%E7%AE%80%E4%BB%8B/guanzhu_1.jpg" width = 50%></center></td>
+<td width="60%" align=left><b>
+    免费知识星球：<a href="http://efonfighting.imwork.net/efonmark-blog/%E7%AE%80%E4%BB%8B/zhishixingqiu1.png">一番码客-积累交流</a><br>
+    微信公众号：<a href="http://efonfighting.imwork.net/efonmark-blog/%E7%AE%80%E4%BB%8B/guanzhu_1.jpg">一番码客</a><br>
+    微信：<a href="http://efonfighting.imwork.net/efonmark-blog/%E7%AE%80%E4%BB%8B/weixin.jpg">Efon-fighting</a><br>
+    网站：<a href="http://efonfighting.imwork.net">http://efonfighting.imwork.net</a><br></b></td>
+</tr>
+</table>
