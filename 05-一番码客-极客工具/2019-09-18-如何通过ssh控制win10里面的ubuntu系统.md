@@ -91,16 +91,83 @@ sudo service ssh start
 <div align=center><img src="2019-09-18-如何通过ssh控制win10里面的ubuntu系统/ssh8.png", width=100%>
 
 <div align=center><img src="2019-09-18-如何通过ssh控制win10里面的ubuntu系统/ssh9.png", width=100%>
-
 3.通过ssh访问win10里的ubuntu
 
 这时我们分别在ubuntu的窗口和windows cmd窗口，输入`ifconfig`、`ipconfig`，查看IP地址。
 
 <div align=center><img src="2019-09-18-如何通过ssh控制win10里面的ubuntu系统/ssh1.png", width=100%>
 
-这是我们如果本地想访问win10内置的ubuntu，直接通过用户名、密码访问`127.0.0.1`即可，不必手动点开一个ubuntu窗口也可以。确实方便了许多。
+这时我们如果本地想访问win10内置的ubuntu，直接通过用户名、密码访问`127.0.0.1`即可，不必手动点开一个ubuntu窗口也可以。确实方便了许多。
+
+## 可能遇到的问题
+
+### ssh 怎样以root用户登录
+
+>  sudo vim /etc/ssh/sshd_config
+>
+> 找到并用#注释掉这行：PermitRootLogin prohibit-password
+>
+> 新建一行 添加：PermitRootLogin yes
+>
+> 重启服务
+>
+> #sudo service ssh restart
+>
+> sudo passwd root   #设置密码
+>
+> 然后ssh root@192.168.2.21就可以登录了
+
+###  Could not load host key 
+
+```shell
+ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
+ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key
+ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key
+```
+
+### Win10 wsl linux子系统ssh服务自启动设置
+
+创建并编辑 /etc/init.wsl，加入如下内容：
+
+```shell
+#! /bin/sh
+/etc/init.d/ssh $1
+```
 
 
+添加执行权限
+
+```shell
+sudo chmod +x /etc/init.wsl
+```
+
+编辑sudoers，避免输入密码
+
+```shell
+sudo visudo
+```
+
+或者
+
+```shell
+sudo nano /etc/sudoers
+```
+
+添加一行
+
+```shell
+%sudo ALL=NOPASSWD: /etc/init.wsl
+```
+
+创建一个startservice.vbs脚本，内容为：
+
+```
+set ws=wscript.createobject("wscript.shell")
+ws.run "C:\Windows\System32\bash.exe -c 'sudo /etc/init.wsl start'",0
+```
+
+
+win10的开始-运行里面输入shell:startup打开启动文件夹，把startservice.vbs脚本放进去，重启系统，搞定。
 
 > 一番雾语：我们要选择的不一定是鲜有人知的捷径，而是少有人选择的艰难之路。捷径虽好不常有，终成大路。保持在路上。
 
