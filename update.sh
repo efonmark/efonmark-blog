@@ -1,3 +1,8 @@
-git reset --hard HEAD
-git pull
-find -iname *.html | xargs rm
+#!/bin/bash
+while true
+do
+	git reset --hard HEAD
+	git pull --rebase
+	find -iname *.html | xargs rm
+	sleep 600
+done
