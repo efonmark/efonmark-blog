@@ -19,13 +19,13 @@ top: 1
 ## <font color=Green> 网站： </font>
 
 **http://efonfighting.imwork.net**
-<img src="简介/website.png" width = 30% /> 
+<img src="readme/website.png" width = 30% /> 
 
 ## <font color=Green> 微信公众号 </font>
-<img src="简介/guanzhu_1.jpg" width = 30% />    
+<img src="readme/guanzhu_1.jpg" width = 30% />    
 
 ## <font color=Green> 免费知识星球 </font>
-<img src="简介/zhishixingqiu1.png" width = 60% />   
+<img src="readme/zhishixingqiu1.png" width = 60% />   
 
 ## <font color=Green> **微信：Efon-fighting**</font>
-<img src="简介/weixin.jpg" width = 30% /> 
+<img src="readme/weixin.jpg" width = 30% /> 
