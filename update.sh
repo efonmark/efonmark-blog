@@ -5,5 +5,5 @@ do
 	git pull --rebase
 	find -iname *.html | xargs rm
 	hexo g
-	sleep 3600
+	sleep 86400 #24h
 done
