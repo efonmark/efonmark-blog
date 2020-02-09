@@ -6,7 +6,7 @@ categories: 极客工具
 ---
 
 > **一番码客 : 挖掘你关心的亮点。**
-> **http://efonfighting.imwork.net**
+> **http://www.efonmark.com**
 
 <img src="2019-04-13-python爬虫实战-微信公众号文章下载-(03)python开源库做图文识别/fighting1.jpg">
 
@@ -109,4 +109,4 @@ def test():
 > **免费知识星球： [一番码客-积累交流]([wwww](https://t.zsxq.com/NRVBURr))**
 > **微信公众号：一番码客**
 > **微信：Efon-fighting**
-> **网站： http://efonfighting.imwork.net**
+> **网站： http://www.efonmark.com**

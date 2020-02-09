@@ -6,7 +6,7 @@ categories: 互联网前后端
 ---
 
 > **一番码客：挖掘你关心的亮点。**
-> **http://efonfighting.imwork.net**
+> **http://www.efonmark.com**
 
 本文目录：
 
@@ -224,7 +224,7 @@ categories: 互联网前后端
 
 ----------
 
-> **免费知识星球： [一番码客-积累交流](http://efonfighting.imwork.net/efonmark-blog/%E7%AE%80%E4%BB%8B/zhishixingqiu1.png)**
-> **微信公众号：[一番码客](http://efonfighting.imwork.net/efonmark-blog/%E7%AE%80%E4%BB%8B/guanzhu_1.jpg)**
-> **微信：[Efon-fighting](http://efonfighting.imwork.net/efonmark-blog/%E7%AE%80%E4%BB%8B/weixin.jpg)**
-> **网站： [http://efonfighting.imwork.net](http://efonfighting.imwork.net)**
+> **免费知识星球： [一番码客-积累交流](http://www.efonmark.com/efonmark-blog/readme/zhishixingqiu1.png)**
+> **微信公众号：[一番码客](http://www.efonmark.com/efonmark-blog/readme/guanzhu_1.jpg)**
+> **微信：[Efon-fighting](http://www.efonmark.com/efonmark-blog/readme/weixin.jpg)**
+> **网站： [http://www.efonmark.com](http://www.efonmark.com)**

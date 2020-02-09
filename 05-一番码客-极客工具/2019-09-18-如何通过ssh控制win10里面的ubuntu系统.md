@@ -6,7 +6,7 @@ categories: 极客工具
 ---
 
 > **一番码客 : 挖掘你关心的亮点。**
-> **http://efonfighting.imwork.net**
+> **http://www.efonmark.com**
 
 前面一番写了一篇《2019-09-15-如何打开win10里面的ubuntu系统》，有同学就问一番能不能通过ssh远程控制这个ubuntu。虽然在win10上打开一个ubuntu的窗口很容易，也可以通过打开多个窗口来实现多终端，但如果实现了通过ssh控制ubuntu，就可以更便捷的开多终端，也可以只是把这个ubuntu当一个linux环境的服务器来用，这确实是一个需求。今天一番就写一篇介绍这个需求的实现。
 
@@ -175,11 +175,11 @@ win10的开始-运行里面输入shell:startup打开启动文件夹，把startse
 
 <table>
 <tr>
-<td ><center><img src="http://efonfighting.imwork.net/efonmark-blog/%E7%AE%80%E4%BB%8B/guanzhu_1.jpg" width = 50%></center></td>
+<td ><center><img src="http://www.efonmark.com/efonmark-blog/readme/guanzhu_1.jpg" width = 50%></center></td>
 <td width="60%" align=left><b>
-    免费知识星球：<a href="http://efonfighting.imwork.net/efonmark-blog/%E7%AE%80%E4%BB%8B/zhishixingqiu1.png">一番码客-积累交流</a><br>
-    微信公众号：<a href="http://efonfighting.imwork.net/efonmark-blog/%E7%AE%80%E4%BB%8B/guanzhu_1.jpg">一番码客</a><br>
-    微信：<a href="http://efonfighting.imwork.net/efonmark-blog/%E7%AE%80%E4%BB%8B/weixin.jpg">Efon-fighting</a><br>
-    网站：<a href="http://efonfighting.imwork.net">http://efonfighting.imwork.net</a><br></b></td>
+    免费知识星球：<a href="http://www.efonmark.com/efonmark-blog/readme/zhishixingqiu1.png">一番码客-积累交流</a><br>
+    微信公众号：<a href="http://www.efonmark.com/efonmark-blog/readme/guanzhu_1.jpg">一番码客</a><br>
+    微信：<a href="http://www.efonmark.com/efonmark-blog/readme/weixin.jpg">Efon-fighting</a><br>
+    网站：<a href="http://www.efonmark.com">http://www.efonmark.com</a><br></b></td>
 </tr>
 </table>

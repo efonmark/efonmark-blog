@@ -7,7 +7,7 @@ categories: linux及工具使用
 
 [TOC]
 
-> **一番码客 : efonfighting.imwork.net**  
+> **一番码客 : www.efonmark.com**  
 > 专注数据挖掘与聚合，分享数据挖掘软件工具与开发技术。
 ----
 
@@ -85,5 +85,3 @@ allow_writeable_chroot=YES
 
 > sudo service vsftpd restart
 
-----
-<div align=center><img src="http://efonfighting.imwork.net/blog_tail.jpg" width=50%\>
