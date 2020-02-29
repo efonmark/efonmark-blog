@@ -121,7 +121,7 @@ http.get("http://www.baidu.com/", res=>{
 
 ![image-20200128162909013](2020-01-28-NodeJs-stream操作大文件/image-20200128162909013.png)
 
-> 一番雾语：简单理解http，没有那么深不可测。
+> 一番雾语：简单运用http，没有那么深不可测。
 
 -------
 <table>
